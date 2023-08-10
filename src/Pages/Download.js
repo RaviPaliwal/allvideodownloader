@@ -1,10 +1,17 @@
 import React, { useState } from 'react'
-const Youtube = () => {
+const avd = require("all-video-downloader");
+
+const Download = () => {
     const [url,seturl] = useState("");
     
-    const handleytdownload = (e)=>{
+    const handledownload = (e)=>{
         e.preventDefault()
-        console.log(url);
+        const info_with_option_urls = avd(
+          url
+        ).then((result) => {
+          alert(result);
+          console.log(result);
+        });
      //Pending
     }
   return (
@@ -21,7 +28,7 @@ const Youtube = () => {
         </div>
 
         <div className="mt-5">
-          <form onSubmit={handleytdownload}>
+          <form onSubmit={handledownload}>
             <div className="grid gap-y-4">
               <div>
                 <label htmlFor="email" className="block text-sm font-bold ml-1 mb-2 dark:text-white">Paste Url Here</label>
@@ -45,4 +52,4 @@ const Youtube = () => {
   )
 }
 
-export default Youtube
+export default Download

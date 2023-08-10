@@ -1,12 +1,12 @@
 import React from 'react'
 import Navbar from './Pages/Navbar'
-import Youtube from './Pages/Youtube'
+import Download from './Pages/Download'
 
 const App = () => {
   return (
     <>
       <Navbar/>
-      <Youtube/>
+      <Download/>
     </>
   )
 }
